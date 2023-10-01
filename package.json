@@ -1,0 +1,18 @@
+{
+  "name": "slope-calc",
+  "version": "1.0.0",
+  "description": "Calculates optimal slopes with pv gis feed in data",
+  "main": "app.js",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc-watcher": "tsc -w",
+    "start": "node build/app.js"
+  },
+  "dependencies": {
+    "tsconfig-paths": "^4.1.2",
+    "date-fns": "2.30.0"
+  },
+  "devDependencies": {
+    "ts-node": "10.9.1"
+  }
+}
