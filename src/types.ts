@@ -1,6 +1,6 @@
 export type TFeedInMetadata = {
-    azimuth: number,
-    slope: number,
+    azimuth: number | "tracked",
+    slope: number | "tracked",
     peakPowerKw: number,
     systemLossPercent: number
 }
