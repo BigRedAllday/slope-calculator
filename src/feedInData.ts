@@ -47,7 +47,7 @@ export class FeedInData {
             }
         }
 
-        if (slope !== undefined && azimuth !== undefined && peakPowerKw !== undefined && systemLossPercent !== undefined) {
+        if (peakPowerKw !== undefined && systemLossPercent !== undefined) {
             return {
                 azimuth: azimuth ?? "tracked",
                 slope: slope ?? "tracked",
