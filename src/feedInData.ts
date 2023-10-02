@@ -49,8 +49,8 @@ export class FeedInData {
 
         if (slope !== undefined && azimuth !== undefined && peakPowerKw !== undefined && systemLossPercent !== undefined) {
             return {
-                azimuth,
-                slope,
+                azimuth: azimuth ?? "tracked",
+                slope: slope ?? "tracked",
                 systemLossPercent,
                 peakPowerKw
             }
