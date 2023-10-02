@@ -7,7 +7,7 @@ import * as console from "console";
 const CALCULATION_STRATEGY = ECalculationStrategy.HALF_YEAR;
 
 async function main() {
-    const allFiles = await getFilesInDirectory(`./feedin/hamburg/south`);
+    const allFiles = await getFilesInDirectory(`./feedin/kassel/inclined`);
 
     const angleToIntervalResults: Map<number, Map<EInterval, number>> = new Map();
 
@@ -15,6 +15,10 @@ async function main() {
         const feedInData = new FeedInData();
         const feedInMetaData = feedInData.loadFeedInData(file);
         console.log(`Calculating slopes for ${JSON.stringify(feedInMetaData)}`);
+
+        if (feedInMetaData.slope === "tracked") {
+            throw Error("Tracked slopes are not supported")
+        }
 
         if (!angleToIntervalResults.has(feedInMetaData.slope)) {
             angleToIntervalResults.set(feedInMetaData.slope, new Map());
